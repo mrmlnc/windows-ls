@@ -1,6 +1,6 @@
 {
   "name": "windows-ls",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple implementation of the ls command for windows",
   "license": "MIT",
   "repository": "mrmlnc/windows-ls",
