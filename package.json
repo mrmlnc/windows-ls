@@ -1,0 +1,50 @@
+{
+  "name": "windows-ls",
+  "version": "0.1.0",
+  "description": "Simple implementation of the ls command for windows",
+  "license": "MIT",
+  "repository": "mrmlnc/windows-ls",
+  "author": {
+    "name": "Denis Malinochkin",
+    "url": "canonium.com"
+  },
+  "bin": {
+    "ls": "./cli.js"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "cli.js",
+    "lib/*"
+  ],
+  "keywords": [
+    "windows",
+    "ls",
+    "win",
+    "list",
+    "linux",
+    "unix",
+    "command",
+    "cli",
+    "implementation",
+    "implement"
+  ],
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jscs": "^2.1.0"
+  },
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "dateformat": "^1.0.11",
+    "glob": "^5.0.14",
+    "minimist": "^1.2.0",
+    "pretty-bytes": "^2.0.1",
+    "text-table": "^0.2.0"
+  }
+}
