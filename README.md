@@ -55,7 +55,7 @@ $ ls *.js
 $ ls *.{js,json}
 $ ls test/**/*
 $ ls test/**/* -lh
-``
+```
 
 ## Changelog
 
