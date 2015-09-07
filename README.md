@@ -38,6 +38,25 @@ $ ls *.js
 $ ls **/.txt
 ```
 
+## Examples usage
+
+```bash
+# Options
+$ ls -a -l -R
+$ ls -alR
+
+# Dirs
+$ ls lib
+$ ls lib -al
+$ ls test -lR
+
+# Glob
+$ ls *.js
+$ ls *.{js,json}
+$ ls test/**/*
+$ ls test/**/* -lh
+``
+
 ## Changelog
 
  - **0.1.1** — Initialization(). 
