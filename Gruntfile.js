@@ -1,8 +1,5 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-    nodeunit: {
-      test: ['test/*_test.js']
-    },
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -24,9 +21,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jscs');
-  grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['jshint', 'jscs', 'watch']);
-  grunt.registerTask('test', ['nodeunit']);
 };

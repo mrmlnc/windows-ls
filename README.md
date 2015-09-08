@@ -59,4 +59,5 @@ $ ls test/**/* -lh
 
 ## Changelog
 
+ - **0.1.2** — Update tests and refactoring variables
  - **0.1.1** — Initialization(). 
