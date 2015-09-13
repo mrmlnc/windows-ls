@@ -11,7 +11,6 @@ var dir = process.cwd();
  * @param {Object} argv
  * @returns {Object}
  */
-
 function setOptions(argv) {
   var op = {
     dot: false,
@@ -33,12 +32,24 @@ function setOptions(argv) {
   }
 
   // Checking arguments
-  if (argv.a) { op.dot = true; }
-  if (argv.R) { op.recursive = true; }
-  if (argv.l) { op.fullMode = true; }
-  if (argv.F) { op.suffix = 'full'; }
-  if (argv.p) { op.suffix = true; }
-  if (argv.h) { op.humanSize = true; }
+  if (argv.a) {
+    op.dot = true;
+  }
+  if (argv.R) {
+    op.recursive = true;
+  }
+  if (argv.l) {
+    op.fullMode = true;
+  }
+  if (argv.F) {
+    op.suffix = 'full';
+  }
+  if (argv.p) {
+    op.suffix = true;
+  }
+  if (argv.h) {
+    op.humanSize = true;
+  }
 
   return op;
 }

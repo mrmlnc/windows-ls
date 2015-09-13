@@ -1,1 +1,3 @@
-test
+var obj = {
+  "one": "size"
+};

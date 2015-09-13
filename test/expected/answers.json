@@ -2,10 +2,7 @@
   "ls": "dir    Gruntfile.js    package.json    test.exe    \n",
   "lsa": ".editorconfig    .gitignore    dir    Gruntfile.js    package.json    test.exe    \n",
   "lsr": "dir    Gruntfile.js    package.json    test.exe    \n\n>> ./dir:\ncat.json    key.txt    styles    \n\n>> ./dir/styles:\nmain.css    vendor    \n\n>> ./dir/styles/vendor:\nvendor.css    \n\n",
-  "lsl": ">>   0  Sep 6  2:04  dir\n>>   4  Sep 6  2:04  Gruntfile.js\n>>   4  Sep 6  2:04  package.json\n>>   4  Sep 6  2:04  test.exe\n",
   "lsf": "dir/    Gruntfile.js    package.json    test.exe*    \n",
   "lsp": "dir/    Gruntfile.js    package.json    test.exe    \n",
-  "lsalf": ">>   4  Sep 6  2:04  .editorconfig\n>>   4  Sep 6  2:04  .gitignore\n>>   0  Sep 6  2:04  dir/\n>>   4  Sep 6  2:04  Gruntfile.js\n>>   4  Sep 6  2:04  package.json\n>>   4  Sep 6  2:04  test.exe*\n",
-  "lslh": ">>   0 B  Sep 6  2:04  dir\n>>   4 B  Sep 6  2:04  Gruntfile.js\n>>   4 B  Sep 6  2:04  package.json\n>>   4 B  Sep 6  2:04  test.exe\n",
   "lsglob": "key.txt    \n"
 }
