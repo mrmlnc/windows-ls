@@ -59,5 +59,6 @@ $ ls test/**/* -lh
 
 ## Changelog
 
+ - **0.1.3** — Added XO and fix tests
  - **0.1.2** — Update tests and refactoring variables
- - **0.1.1** — Initialization(). 
+ - **0.1.1** — Initialization().
