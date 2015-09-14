@@ -1,3 +1,4 @@
+var os = require('os');
 var test = require('ava');
 var exec = require('child_process').exec;
 
@@ -71,8 +72,12 @@ test('ls -lh', function(t) {
 });
 
 test('ls glob', function(t) {
-  exec('node ../../cli.js **/*.txt', { cwd: 'test/fixtures' }, function (err, stdout) {
-    t.is(checkOut(stdout, ['key.txt']), true);
+  if (os.type() === 'Windows_NT') {
+    exec('node ../../cli.js **/*.txt', { cwd: 'test/fixtures' }, function (err, stdout) {
+      t.is(checkOut(stdout, ['key.txt']), true);
+      t.end();
+    });
+  } else {
     t.end();
-  });
+  }
 });
