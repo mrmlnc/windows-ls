@@ -2,6 +2,8 @@
 
 Simple implementation of the ls command for windows.
 
+[![Build Status](https://travis-ci.org/mrmlnc/windows-ls.svg?branch=master)](https://travis-ci.org/mrmlnc/windows-ls)
+
 ## Installation
 
 ```bash
