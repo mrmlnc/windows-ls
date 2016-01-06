@@ -8,51 +8,59 @@ function checkOut(output, checkVals) {
   });
 }
 
-it('ls', function() {
+it('ls', function(done) {
   exec('node ../../cli.js', { cwd: 'test/fixtures' }, function(err, stdout) {
     assert.equal(checkOut(stdout, ['dir', 'Gruntfile.js', 'package.json', 'test.exe']), true);
+    done();
   });
 });
 
-it('ls -a', function() {
+it('ls -a', function(done) {
   exec('node ../../cli.js -a', { cwd: 'test/fixtures' }, function(err, stdout) {
     assert.equal(checkOut(stdout, ['.editorconfig', '.gitignore', 'dir']), true);
+    done();
   });
 });
 
-it('ls -R', function() {
+it('ls -R', function(done) {
   exec('node ../../cli.js -R', { cwd: 'test/fixtures' }, function(err, stdout) {
     assert.equal(checkOut(stdout, ['./dir:', 'cat.json', './dir/styles:', 'vendor']), true);
+    done();
   });
 });
 
-it('ls -l', function() {
+it('ls -l', function(done) {
   exec('node ../../cli.js -l', { cwd: 'test/fixtures' }, function(err, stdout) {
     assert.equal(checkOut(stdout, ['dir', '32']), true);
+    done();
   });
 });
 
-it('ls -F', function() {
+it('ls -F', function(done) {
   exec('node ../../cli.js -F', { cwd: 'test/fixtures' }, function(err, stdout) {
     assert.equal(checkOut(stdout, ['dir/', 'test.exe*']), true);
+    done();
   });
 });
 
-it('ls -p', function() {
+it('ls -p', function(done) {
   exec('node ../../cli.js -p', { cwd: 'test/fixtures' }, function(err, stdout) {
     assert.equal(checkOut(stdout, ['dir/']), true);
+    done();
   });
 });
 
-it('ls -laF', function() {
+it('ls -laF', function(done) {
   exec('node ../../cli.js -laF', { cwd: 'test/fixtures' }, function(err, stdout) {
     assert.equal(checkOut(stdout, ['.editorconfig', 'dir/', 'test.exe*', '32']), true);
+    done();
   });
 });
 
-it('ls -lh', function() {
+it('ls -lh', function(done) {
   exec('node ../../cli.js -lh', { cwd: 'test/fixtures' }, function(err, stdout) {
     assert.equal(checkOut(stdout, ['32 B']), true);
+    done();
   });
 });
 
