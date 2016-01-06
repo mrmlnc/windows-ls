@@ -1,83 +1,68 @@
 var os = require('os');
-var test = require('ava');
+var assert = require('assert');
 var exec = require('child_process').exec;
 
 function checkOut(output, checkVals) {
-  var finale = false;
-  for (var i = 0; i < checkVals.length; i++) {
-    if (output.indexOf(checkVals[i]) >= 0) {
-      finale = true;
-    } else {
-      return false;
-    }
-  }
-
-  return finale;
+  return checkVals.some(function(value) {
+    return output.indexOf(value) >= 0;
+  });
 }
 
-test('ls', function(t) {
-  exec('node ../../cli.js', { cwd: 'test/fixtures' }, function (err, stdout) {
-    t.is(checkOut(stdout, ['dir', 'Gruntfile.js', 'package.json', 'test.exe']), true);
-    t.end();
+it('ls', function() {
+  exec('node ../../cli.js', { cwd: 'test/fixtures' }, function(err, stdout) {
+    assert.equal(checkOut(stdout, ['dir', 'Gruntfile.js', 'package.json', 'test.exe']), true);
   });
 });
 
-test('ls -a', function(t) {
-  exec('node ../../cli.js -a', { cwd: 'test/fixtures' }, function (err, stdout) {
-    t.is(checkOut(stdout, ['.editorconfig', '.gitignore', 'dir']), true);
-    t.end();
+it('ls -a', function() {
+  exec('node ../../cli.js -a', { cwd: 'test/fixtures' }, function(err, stdout) {
+    assert.equal(checkOut(stdout, ['.editorconfig', '.gitignore', 'dir']), true);
   });
 });
 
-test('ls -R', function(t) {
-  exec('node ../../cli.js -R', { cwd: 'test/fixtures' }, function (err, stdout) {
-    t.is(checkOut(stdout, ['./dir:', 'cat.json', './dir/styles:', 'vendor']), true);
-    t.end();
+it('ls -R', function() {
+  exec('node ../../cli.js -R', { cwd: 'test/fixtures' }, function(err, stdout) {
+    assert.equal(checkOut(stdout, ['./dir:', 'cat.json', './dir/styles:', 'vendor']), true);
   });
 });
 
-test('ls -l', function(t) {
-  exec('node ../../cli.js -l', { cwd: 'test/fixtures' }, function (err, stdout) {
-    t.is(checkOut(stdout, ['dir', '32']), true);
-    t.end();
+it('ls -l', function() {
+  exec('node ../../cli.js -l', { cwd: 'test/fixtures' }, function(err, stdout) {
+    assert.equal(checkOut(stdout, ['dir', '32']), true);
   });
 });
 
-test('ls -F', function(t) {
-  exec('node ../../cli.js -F', { cwd: 'test/fixtures' }, function (err, stdout) {
-    t.is(checkOut(stdout, ['dir/', 'test.exe*']), true);
-    t.end();
+it('ls -F', function() {
+  exec('node ../../cli.js -F', { cwd: 'test/fixtures' }, function(err, stdout) {
+    assert.equal(checkOut(stdout, ['dir/', 'test.exe*']), true);
   });
 });
 
-test('ls -p', function(t) {
-  exec('node ../../cli.js -p', { cwd: 'test/fixtures' }, function (err, stdout) {
-    t.is(checkOut(stdout, ['dir/']), true);
-    t.end();
+it('ls -p', function() {
+  exec('node ../../cli.js -p', { cwd: 'test/fixtures' }, function(err, stdout) {
+    assert.equal(checkOut(stdout, ['dir/']), true);
   });
 });
 
-test('ls -laF', function(t) {
-  exec('node ../../cli.js -laF', { cwd: 'test/fixtures' }, function (err, stdout) {
-    t.is(checkOut(stdout, ['.editorconfig', 'dir/', 'test.exe*', '32']), true);
-    t.end();
+it('ls -laF', function() {
+  exec('node ../../cli.js -laF', { cwd: 'test/fixtures' }, function(err, stdout) {
+    assert.equal(checkOut(stdout, ['.editorconfig', 'dir/', 'test.exe*', '32']), true);
   });
 });
 
-test('ls -lh', function(t) {
-  exec('node ../../cli.js -lh', { cwd: 'test/fixtures' }, function (err, stdout) {
-    t.is(checkOut(stdout, ['32 B']), true);
-    t.end();
+it('ls -lh', function() {
+  exec('node ../../cli.js -lh', { cwd: 'test/fixtures' }, function(err, stdout) {
+    assert.equal(checkOut(stdout, ['32 B']), true);
   });
 });
 
-test('ls glob', function(t) {
+it('ls glob', function(done) {
   if (os.type() === 'Windows_NT') {
-    exec('node ../../cli.js **/*.txt', { cwd: 'test/fixtures' }, function (err, stdout) {
-      t.is(checkOut(stdout, ['key.txt']), true);
-      t.end();
+    exec('node ../../cli.js **/*.txt', { cwd: 'test/fixtures' }, function(err, stdout) {
+      assert.equal(checkOut(stdout, ['key.txt']), true);
+      done();
     });
   } else {
-    t.end();
+    done();
   }
 });
