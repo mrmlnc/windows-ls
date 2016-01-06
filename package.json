@@ -15,10 +15,8 @@
     "test": "xo --ignore=test/fixtures/** && mocha test/test.js"
   },
   "files": [
-    "README.md",
-    "LICENSE",
     "cli.js",
-    "lib/*"
+    "lib"
   ],
   "keywords": [
     "windows",
