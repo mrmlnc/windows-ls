@@ -64,6 +64,7 @@ $ ls test/**/* -lh
 
 ## Changelog
 
+ - **1.0.1** — Fix error `operation not permitted`.
  - **1.0.0** — First stable version.
  - **0.1.3** — Added XO and fix tests.
  - **0.1.2** — Update tests and refactoring variables.
