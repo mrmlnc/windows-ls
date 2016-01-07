@@ -1,9 +1,15 @@
 #!/usr/bin/env node
+
+'use strict';
+
+// Node.js libs
 var path = require('path');
 var glob = require('glob');
+// Common libs
 var hasGlob = require('has-glob');
-var Fsys = require('./lib/fsys');
 var argv = require('minimist')(process.argv.slice(2));
+// Common vars
+var Fsys = require('./lib/fsys');
 var dir = process.cwd();
 
 /**
