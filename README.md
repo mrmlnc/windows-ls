@@ -2,7 +2,10 @@
 
 Simple implementation of the ls command for windows.
 
-[![Build Status](https://travis-ci.org/mrmlnc/windows-ls.svg?branch=master)](https://travis-ci.org/mrmlnc/windows-ls)
+[![Travis](https://img.shields.io/travis/mrmlnc/windows-ls.svg?style=flat-square)](https://travis-ci.org/mrmlnc/windows-ls)
+[![NPM version](https://img.shields.io/npm/v/windows-ls.svg?style=flat-square)](https://www.npmjs.com/package/windows-ls)
+[![devDependency Status](https://img.shields.io/david/mrmlnc/windows-ls.svg?style=flat-square)](https://david-dm.org/mrmlnc/windows-ls#info=dependencies)
+[![devDependency Status](https://img.shields.io/david/dev/mrmlnc/windows-ls.svg?style=flat-square)](https://david-dm.org/mrmlnc/windows-ls#info=devDependencies)
 
 ## Installation
 
