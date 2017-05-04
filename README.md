@@ -1,5 +1,7 @@
 # windows-ls
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mrmlnc/windows-ls.svg)](https://greenkeeper.io/)
+
 Simple implementation of the ls command for windows.
 
 [![Travis](https://img.shields.io/travis/mrmlnc/windows-ls.svg?style=flat-square)](https://travis-ci.org/mrmlnc/windows-ls)
